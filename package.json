@@ -1,0 +1,61 @@
+{
+  "name": "markdown-pdfmake",
+  "version": "0.0.1",
+  "description": "A library to convert markdown to pdfmake definitions.",
+  "keywords": [
+    "markdown",
+    "pdf",
+    "pdfmake"
+  ],
+  "homepage": "https://github.com/HouXuelin112/markdown-pdfmake#readme",
+  "bugs": {
+    "url": "https://github.com/HouXuelin112/markdown-pdfmake/issues"
+  },
+  "license": "MIT",
+  "author": "Hou Xuelin",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HouXuelin112/markdown-pdfmake.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "types": "./dist/index.d.mts",
+  "exports": {
+    ".": "./dist/index.mjs",
+    "./font": "./dist/font.mjs",
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build": "vp pack",
+    "dev": "vp pack --watch",
+    "test": "vp test",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "pnpm run build",
+    "prepare": "vp config",
+    "example": "vite --config example/vite.config.ts"
+  },
+  "devDependencies": {
+    "@types/markdown-it": "^14.1.1",
+    "@types/node": "^25.3.5",
+    "@types/pdfmake": "^0.3.2",
+    "@typescript/native-preview": "7.0.0-dev.20260309.1",
+    "bumpp": "^10.4.1",
+    "typescript": "^5.9.3",
+    "vite-plugin-html": "^3.2.2",
+    "vite-plus": "latest",
+    "vitest": "npm:@voidzero-dev/vite-plus-test@latest"
+  },
+  "packageManager": "pnpm@10.32.1",
+  "pnpm": {
+    "overrides": {
+      "vite": "npm:@voidzero-dev/vite-plus-core@latest",
+      "vitest": "npm:@voidzero-dev/vite-plus-test@latest"
+    }
+  },
+  "dependencies": {
+    "markdown-it": "^14.1.1",
+    "pdfmake": "^0.3.6"
+  }
+}
